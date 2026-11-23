@@ -1,0 +1,4 @@
+name = Uzi's SICK AS HELL RAILGUN
+author = Mx.Pikachu The Silly Gal
+description = Uzi's Railgun is now apart of your arsenal. Go unleash chaos! (Patch v0.5.0.3)
+tags = Tool
