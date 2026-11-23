@@ -1952,8 +1952,15 @@ if GetString("game.player.tool") == "ORIS_Railgun_MD_Reskin" and GetPlayerVehicl
 				if not ghost_crosshair then
 					UiImage("MOD/Assets/VFX/Crosshair.png")
 				else
-					UiColor(1, 0.5, 0, 0.95)
+					if AmmoType == 3 then
+						UiColor(1, 0, 0, 0.95)
+					else
+						UiColor(1, 0.5, 0, 0.95)
+					end
 					UiImage("MOD/Assets/VFX/Crosshair_warning.png")
+				end
+				if ghost_crosshair then
+					UiTranslate(-crshr_midscrn_xdiff*2, -crshr_midscrn_ydiff*2)
 				end
 				if AmmoType == 1 then
 					UiColor(0, 1, 1, ammo_select_fade)
@@ -1966,6 +1973,9 @@ if GetString("game.player.tool") == "ORIS_Railgun_MD_Reskin" and GetPlayerVehicl
 				if AmmoType == 3 then
 					UiColor(1, 0.25, 0.25, ammo_select_fade)
 					UiImage("MOD/Assets/VFX/Crosshair_explosive.png")
+				end
+				if ghost_crosshair then
+					UiTranslate(crshr_midscrn_xdiff*2, crshr_midscrn_ydiff*2)
 				end
 			else
 				scoped_zoom = true
@@ -1984,7 +1994,13 @@ if GetString("game.player.tool") == "ORIS_Railgun_MD_Reskin" and GetPlayerVehicl
 			end
 			if ghost_crosshair and not scoped_zoom then
 				UiTranslate(-crshr_midscrn_xdiff*2, -crshr_midscrn_ydiff*2)
-				UiImage("MOD/Assets/VFX/Crosshair_blocked.png")
+				if AmmoType == 3 then
+					UiColor(1,0,0,1)
+					UiImage("MOD/Assets/VFX/Crosshair_blocked.png")
+				else
+					UiColor(0.75,0.5,0,1)
+					UiImage("MOD/Assets/VFX/Crosshair.png")
+				end
 				UiTranslate(crshr_midscrn_xdiff*2, crshr_midscrn_ydiff*2)
 			end
 			--if not scoped_zoom then
