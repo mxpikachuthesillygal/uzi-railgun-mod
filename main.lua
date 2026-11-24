@@ -409,7 +409,7 @@ function tick()
 	if GetString("game.player.tool") == "ORIS_Railgun_MD_Reskin" then
 		local attachmentPoint = Transform(VecScale(Vec(11.5, -8, 0), 0.05))
 		
-		--/ this line defines the laserlightTransform in world vec, done by translating the local vec inside the tool body out of the tool body
+		--/ this line defines the laserlightTransform in world vec, done by translating the local vec inside the tool body out of the tool body eepy
 		local laserlightTransfrom=TransformToParentTransform(GetBodyTransform(GetToolBody()), attachmentPoint)
 		
 		--/ just in case its a nil, can remove this if statement if you want, its not needed
