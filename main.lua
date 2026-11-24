@@ -70,9 +70,9 @@ function init()
 	-- DO UPDATE CHANGES HERE FROM NOW ON
 	-- Updating/Setting Version String
 	if ((GetString("savegame.mod.version")) == nil or (GetString("savegame.mod.version")) == '') then
-		SetString("savegame.mod.version", "v0.5.0.3")
+		SetString("savegame.mod.version", "v0.5.0.4")
 	end
-	if GetString("savegame.mod.version") == "v0.3.9.0" then
+	if (GetString("savegame.mod.version") == "v0.3.9.0") then
 		ClearKey("savegame.mod.fov_zoom")
 		SetBool("savegame.mod.doommode", false)
 	end
@@ -80,8 +80,8 @@ function init()
 		SetString("savegame.mod.kb_pwr", 0.45)
 		SetString("savegame.mod.fire_power", 1)
 	end
-	if not GetString("savegame.mod.version") == "v0.5.0.3" then
-		SetString("savegame.mod.version", "v0.5.0.3")
+	if not (GetString("savegame.mod.version") == "v0.5.0.4") then
+		SetString("savegame.mod.version", "v0.5.0.4")
 	end
 	-- v0.3.4 Settings
 	if ((GetString("savegame.mod.highlight_color")) == nil or (GetString("savegame.mod.highlight_color")) == '') then
@@ -1557,12 +1557,40 @@ function draw(dt)
 		if UiTextButton("[CLOSE Menu]") then
 			new_ui_open = false
 			TempHideUi = false
+			clear_registry_counter = 1
+			counter_check_complete = false
 		end
 		UiTranslate(12,30)
 	-- Reset Registry Keys
 		if Debug then
+			local rue = clear_registry_counter
+			UiColor(1,0,0,1)
+			UiTranslate(0,23)
+			UiText("      ___________________")
+			UiTranslate(0,-23)
+			UiColor((rue-1)/5,.1,0,1)
 			if UiTextButton("[ !! CLEAR REGISTRY KEYS !! ]") then
-				ClearALLKeys()
+				UiSound("MOD/Assets/SFX/kl_fiddlesticks.ogg")
+				if clear_registry_counter == 1 then
+					clear_registry_counter = 2
+					counter_check_complete = true
+				end
+				if clear_registry_counter == 2 and not counter_check_complete then
+					clear_registry_counter = 3
+					counter_check_complete = true
+				end
+				if clear_registry_counter == 3 and not counter_check_complete then
+					clear_registry_counter = 4
+					counter_check_complete = true
+				end
+				if clear_registry_counter == 4 and not counter_check_complete then
+					clear_registry_counter = 5
+					counter_check_complete = true
+					end
+				if clear_registry_counter == 5 and not counter_check_complete then
+					ClearALLKeys()
+				end
+				counter_check_complete = false
 			end
 		end
 		UiTranslate(0,30)
@@ -3319,6 +3347,8 @@ function Variable_Intialization()
 	Max_FPS = 0
 	colors_saved = false
 	color_notice_time = 999999999
+	clear_registry_counter = 1
+	counter_check_complete = false
 end
 
 -- Source - https://stackoverflow.com/a/41534034

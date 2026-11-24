@@ -10,7 +10,7 @@ function init()
 	-- DO UPDATE CHANGES HERE FROM NOW ON
 	-- Updating/Setting Version String
 	if ((GetString("savegame.mod.version")) == nil or (GetString("savegame.mod.version")) == '') then
-		SetString("savegame.mod.version", "v0.5.0.3")
+		SetString("savegame.mod.version", "v0.5.0.4")
 		end
 	if GetString("savegame.mod.version") == "v0.3.9.0" then
 		ClearKey("savegame.mod.fov_zoom")
@@ -20,8 +20,8 @@ function init()
 		SetString("savegame.mod.kb_pwr", 0.45)
 		SetString("savegame.mod.fire_power", 1)
 	end
-	if not GetString("savegame.mod.version") == "v0.5.0.3" then
-		SetString("savegame.mod.version", "v0.5.0.3")
+	if not (GetString("savegame.mod.version") == "v0.5.0.4") then
+		SetString("savegame.mod.version", "v0.5.0.4")
 	end
 	-- v0.3.4 Settings
 	if ((GetString("savegame.mod.red")) == nil or (GetString("savegame.mod.red")) == '') then
