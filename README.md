@@ -1,5 +1,6 @@
 # Uzi's SICK AS HELL Railgun
 [Link To Steam Workshop Page](<https://steamcommunity.com/sharedfiles/filedetails/?id=3485586841>)
+_(details about features, controls, etc. can be found there)_
 
 Bring Uzi Doorman's questionably constructed weapon into your toolset for unprecedented levels of destruction and mobility.
 
@@ -13,8 +14,6 @@ This Magnetically Amplified Photon Converger will vaporize any target in its pat
 - **Caped Karnage, Dzage, and Deffcolony** for the original mod.
 - **Teardown Discord Server / Modding Community** for providing me resources and answering questions.
 - **Tuxedo Labs** for making an awesome game.
-
-_(more details can be found on the steam workshop page)_
 
 ## Known Bugs
 - **Status Indicator slides around**
